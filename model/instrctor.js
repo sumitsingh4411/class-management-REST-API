@@ -1,0 +1,39 @@
+const mongoose =require('mongoose');
+
+const instructor=mongoose.Schema({
+      name:{
+          type:String,
+          required:true
+      },
+      username:{
+          type:String,
+          required:true,
+          index:{
+              unique:true,
+          }
+      },
+      email:{
+          type:String,
+          required:true,
+          index:{
+              unique:true
+          },
+          mathch:/^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$/
+      },
+      password:{
+           type:String,
+           required:true
+      },
+      address:{
+          type:String,
+          required:true
+      },
+      id_card:{
+          type:String,
+          required:true
+      },
+      Bank_details:{
+          type:String,
+      }
+})
+module.exports=mongoose.model("instructors",instructor);
